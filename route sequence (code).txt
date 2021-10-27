@@ -4,9 +4,9 @@
 4. Turn and grap set 2 of cars (red/blue)
 5. Go to bottom
 6. Deposit blue with batt on slot 1 (1-12 from bottom left/left to right)
-7. Deposit only batt at slot 5
-8. Deposit red at slot 6 (both should empty)
-9. Grab the blue from slot 2
+7. Deposit red at slot 6
+8. Grab the blue from slot 2 (both should empty)
+9. Deposit only batt at slot 5
 10. Go back and leave blue car first
 11. Grab 2 batteries (remaining left 2)
 12. Grab blue car back
