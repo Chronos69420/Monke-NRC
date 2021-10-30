@@ -16,17 +16,16 @@
 16. Deposit the green in slot 5 without batt (alr have batt in slot 5/refer to 7.)
 17. Should be only 2 batt left
 18. Deposit batt at slot 8
-19. Collect green car from 7 into empty slot
-20. Collect green car from 7 in the empty compartment
-21. Deposit batt in slot 7
-22. Now only have 1 green car
-23. Drive through where set 2 was
-24. Deposit green car in upper yellow zone
-25. Turn around and collect set 3 (green/blue)
-26. Go down
-27. Deposit green car in slot 7
-28. Deposit blue car in slot 8
-29. Grab red car from slot 4
-30. Go up
-31. Deposit red car in slot 9 (10 alr full/refer to 15.)
-32. Go back to starting zone
+19. Collect green car from 7 in the empty compartment
+20. Deposit batt in slot 7
+21. Now only have 1 green car
+22. Drive through where set 2 was
+23. Deposit green car in upper yellow zone
+24. Turn around and collect set 3 (green/blue)
+25. Go down
+26. Deposit green car in slot 7
+27. Deposit blue car in slot 8
+28. Grab red car from slot 4
+29. Go up
+30. Deposit red car in slot 9 (10 alr full/refer to 15.)
+31. Go back to starting zone
