@@ -1,0 +1,6 @@
+1. Collect green car from slot 7
+2. Collect red car from slot 4
+3. Turn back and deposit red in slot 6
+4. Collect blue car from slot 2
+5. Deposit blue in upper yellow zone
+6. Deposit green in lower yellow zone
