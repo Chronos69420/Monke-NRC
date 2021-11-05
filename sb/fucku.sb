@@ -93,10 +93,10 @@ EndSub
 
 Sub Step1
   CloseClaw()
-  Motor.Move("BC",50,330,"True")
+  Motor.Move("BC",50,340,"True")
   Motor.Stop("BC","True")
   Program.Delay(200)
-  Motor.MoveSync("BC",50,-50,235,"True")
+  Motor.MoveSync("BC",50,-50,237,"True")
   Program.Delay(200)
   Motor.Move("BC",50,90,"True")
   readVal()
