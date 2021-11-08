@@ -21,6 +21,8 @@ Intergal[0] = 0
 Count[0] = 0
 Count[1] = 0
 
+B_Degree = 0
+
 Sensor.SetMode(2, 4)
 Sensor.SetMode(3, 4)
 
@@ -40,6 +42,8 @@ Program.Delay(100)
 Step5()
 Program.Delay(100)
 Step6()
+Program.Delay(100)
+Step7()
 
 
 
@@ -91,7 +95,7 @@ EndSub
 
 Sub CloseD
   Motor.Start("D",-30)
-  Program.Delay(400)
+  Program.Delay(600)
   Motor.Stop("D","True")
 EndSub
 
@@ -145,8 +149,9 @@ Sub Step3 'Collect Red Car and move to slot 3'
   Motor.Stop("BC","True")
   Motor.MoveSync("BC",30,-30,220,"False")
   readVal()
-  While lightVal[1] < 70
+  While lightVal[1] < 120
     Motor.StartSync("BC",30,-30)
+    readVal()
   EndWhile
   Motor.Stop("BC","True")
   Program.Delay(200)
@@ -160,7 +165,7 @@ Sub Step3 'Collect Red Car and move to slot 3'
 
   Motor.MoveSync("BC",30,-30,260,"False")
   readVal()
-  While lightVal[0] < 60
+  While lightVal[0] < 100
     readVal()
     Motor.StartSync("BC",30,-30)
   EndWhile
@@ -177,6 +182,7 @@ Sub Step3 'Collect Red Car and move to slot 3'
       Program.Delay(10)
       Count[0] = 1
       Program.Delay(10)
+      readVal()
     Endif
   EndWhile
   Program.Delay(100)
@@ -185,21 +191,39 @@ EndSub
 
 Sub Step4 
   
-  Motor.MoveSync("BC",30,0,110,"True")
-  Program.Delay(100)
-  Motor.MoveSync("BC",0,-30,110,"True")
+  Motor.MoveSync("BC",30,0,250,"True")
+  Program.Delay(1000)
+  Motor.MoveSync("BC",0,-30,280,"True")
   Motor.Stop("BC","True")
   Program.Delay(1000)
   OpenD()
-  Motor.Move("BC",20,130,"True")
+  Motor.Move("BC",20,220,"True")
   CloseD()
-  Motor.Move("BC",-20,130,"True")
-  Motor.MoveSync("BC",-30,30,230,"False")
+  
+  Motor.MoveSync("BC",-30,2,360,"False")
+  
   readVal()
-  While lightVal[1] < 80
-    Motor.StartSync("BC",-30,30)
+  While lightVal[0] < 100
+    Motor.StartSync("BC",-30,0)
+    readVal()
   EndWhile
   Motor.Stop("BC","True")
+  Program.Delay(3000)
+  Motor.MoveSync("BC",30,50,90,"True")
+  Program.Delay(1000)
+  
+  
+  Motor.ResetCount("B")
+  Motor.GetCount("B")
+  
+  While B_Degree <= 120
+    readVal()
+    PD()
+    B_Degree = Motor.GetCount("B")
+  EndWhile
+
+  Program.Delay(1000)
+
   Count[0] = 0
   While Count[0] < 1
     PD()
@@ -207,19 +231,22 @@ Sub Step4
     if lightVal[1] < 100 then
       Speaker.Note(100,"B8",20)
       Program.Delay(10)
-      Count[0] = 1
+      Count[0] = Count[0] + 1
+      Program.Delay(10)
       readVal()
     Endif
   EndWhile
+  Motor.Stop("BC","True")
 EndSub
 
 Sub Step5
-  Motor.Move("BC",30,30,"True")
+  Motor.Move("BC",30,60,"True")
   Program.Delay(100)
   Motor.MoveSync("BC",30,-30,220,"False")
   readVal()
-  While lightVal[1] < 80
+  While lightVal[0] < 120
     Motor.StartSync("BC",-30,30)
+    readVal()
   EndWhile
   Motor.Stop("BC","True")
   Program.Delay(100)
@@ -228,51 +255,89 @@ Sub Step5
   Program.Delay(100)
   Motor.Move("BC",-20,160,"True")
   CloseA()
-  Program.Delay(100)
+  Program.Delay(1000)
 
-  Motor.MoveSync("BC",-30,30,4000,"True")
+  Motor.MoveSync("BC",-30,30,400,"True")
   readVal()
-  While lightVal[0] < 80
+  While lightVal[0] < 120
     Motor.StartSync("BC",-30,30)
+    readVal()
   EndWhile
+  
+  Motor.MoveSync("BC",-30,30,60,"True")
+
   Motor.Stop("BC","True")
   Program.Delay(1000)
   
 EndSub
 
 Sub Step6
-  Motor.Move("BC",30,30,"True")
-  Program.Delay(100)
-  Motor.MoveSync("BC",-30,30,220,"False")
-  readVal()
-  While lightVal[1] < 80
-    Motor.StartSync("BC",-30,30)
-  EndWhile
-  Motor.Stop("BC","True")
   OpenA()
-  Motor.Move("BC",20,130,"True")
-  CloseD()
-  Motor.Move("BC",-20,130,"True")
-  Program.Delay(100)
-  Motor.MoveSync("BC",30,-30,220,"False")
-readVal()
-  While lightVal[0] < 80
-    Motor.StartSync("BC",-30,30)
-  EndWhile
-  Motor.Stop("BC","True")
-  Program.Delay(100)
-  Count[0] = 0
-  While Count[0] < 2
-    PD()
+  Motor.Move("BC",20,200,"True")
+  CloseA()
+  Motor.Move("BC",-20,200,"True")
+  Program.Delay(1000)
+  Motor.MoveSync("BC",30,-30,260,"False")
+  readVal()
+  While lightVal[0] < 120
+    Motor.StartSync("BC",30,-30)
     readVal()
-    if lightVal[1] < 100 then
+  EndWhile
+  Motor.MoveSync("BC",30,-30,30,"True")
+  Motor.Stop("BC","True")
+  Program.Delay(1000)
+  Count[0] = 0
+  TP[0] = 50
+  While Count[0] < 3
+    readVal()
+    PD()
+    if lightVal[1] < 120 then
       Speaker.Note(100,"B8",20)
       Program.Delay(10)
       Count[0] = Count[0] + 1
-      Program.Delay(100)
+      Program.Delay(10)
       Motor.Move("BC",50,20,"False")
+      readVal()
     Endif
   EndWhile
+  Motor.Move("BC",50,50,"True")
   Motor.Stop("BC","True")
 EndSub
+
+Sub Step7
+  Motor.MoveSync("BC",30,-30,220,"False")
+  readVal()
+  While lightVal[0] < 100
+    Motor.StartSync("BC",30,-30)
+    readVal()
+  EndWhile
+  Motor.Stop("BC","True")
+  Count[0] = 0
+  While Count[0] < 1
+    readVal()
+    PD()
+    if lightVal[1] < 120 then
+      Speaker.Note(100,"B8",20)
+      Program.Delay(10)
+      Count[0] = Count[0] + 1
+      Program.Delay(10)
+      
+    Endif
+  EndWhile
+  Motor.Move("BC",30,60,"True")
+  Motor.Stop("BC","True")
+EndSub
+  
+Sub Step8
+  Motor.Start("C",30)
+  Program.Delay(1000)
+  Motor.Stop("BC","True")
+  OpenA()
+  readVal()
+  While lightVal[1] < 100
+    Motor.Start("C",-30)
+    readVal()
+  EndWhile
+  Motor.Move("C",-30,40,"True")
+  TP[0] = -30
   
