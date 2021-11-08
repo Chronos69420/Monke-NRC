@@ -1,64 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Team Monke</title>
+<title>NRC: Team Monke</title>
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
-    html {
-        font-family: Verdana;
-    }
-
-    body{
-        background-image: url(https://scontent.fsin10-1.fna.fbcdn.net/v/t1.6435-9/53810924_2831539723523618_955507503259451392_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=mMYLH14A0wMAX_owZBs&_nc_ht=scontent.fsin10-1.fna&oh=3c0fe49287da546c5297bab572ae239f&oe=6144BD3E);
-        background-position: center;
-        background-size:cover
-    }
-
-    h1 {
-        /* font-family: Verdana; */
-        text-decoration: underline;
-    }
-
-    ol {
-        background-color: lightblue;
-        border-style: solid;
-        border-width: 2px;
-        overflow: hidden;
-        border-radius: 10px;
-        /* font-family: Verdana; */
-    }
-
-    h2 {
-        border-radius: 10px;
-        border-style: solid;
-        background-color: #ffabe380;
-        /* font-family: Verdana; */
-    }
-
-    p {
-        background-color: #ffabe380;
-        border-radius: 2px;
-        /* font-family: Verdana; */
-    }
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.stylehalf img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.stylehalf img:hover{opacity:1}
 </style>
-
 <body>
-    <h1>Team Monke</h1>
-    <h2>Group Members:</h2>
-    <ol>
-        <li>Alvin</li>
-        <li>Yunsong</li>
-        <li>Guanyu</li>
-    </ol>
-    <h2>5 Reasons Why You Should Sh*t Regularly:</h2>
-    <ol>
-        <li>Its healthy when you sh*t.</li>
-        <li>Its like a relieve stress thing.</li>
-        <li>Its a strategy to lose weight.</li>
-        <li>You can sneak your phone in when you sh*t.</li>
-        <li>You can f*p when you sh*t.</li>
-    </ol>
-    <p>
-        Resources taken from: <b>Yah MOM</b>
-    </p>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Team<br>Monke</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#Robot Mission" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Robot Mission</a> 
+    <a href="#Research" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Research</a> 
+    <a href="#References" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">References</a> 
+    <a href="#Group Members & Roles" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Group Members & Roles</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Team Monke</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="Robot Mission">
+    <h1 class="w3-jumbo"><b>Team Monke</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Robot Mission.</b></h1>
+  </div>
+  
+  <!-- Robot Mission -->
+  <div class="w3-row-padding">
+    <div class="stylehalf">
+      <p><b>Date: 23 April 2021</b></p>
+      <p><b>Challenges Faced:</b></p>
+      <p>Ongoing pandemic</p>
+      <ul>
+        <li>Multiple pauses in development</li>
+        <li>Difficulty in meeting up as a group</li>
+        <li>Forced to alter many plans</li>
+      </ul>
+    </div>
+
+    <div class="stylehalf">
+      <p><b>Robot Design:</b></p>
+      <p>4 Large Motors</p>
+      <ul>
+        <li>2 for base</li>
+        <li>2 for claws</li>
+      </ul>
+
+      <p>2 EV3 Colour Sensors</p>
+      <ul>
+        <li>For line tracking & playfield positioning</li>
+      </ul>
+
+      <p>2 Hi-Technic Colour Sensors</p>
+      <ul>
+        <li>For detection of cars & obstacles</li>
+      </ul>
+    </div>
+
+    <div class="stylehalf">
+      <p><b>Code:</b></p>
+      <p>Software/programming language used: Small Basic (.sb)</p>
+      <ol>
+        <li>Plan out most efficient path/algorithm</li>
+        <li>Create rough code with movement/logic blocks</li>
+        <li>Tuning values to perfection with testing</li>
+        <li>Celebrate ;-)</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Research -->
+  <div class="w3-container" id="Research" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Research: Park and Charge.</b></h1>
+    <p><b>Electric Vehicles</b></p>
+    <ul>
+      <li>Also referred to as battery electric vehicles</li>
+      <li>Have an electric motor instead of an internal combustion engine</li>
+      <li>Electric vehicles use a large traction battery pack to power the electric motor and must be plugged in to a wall outlet or charging equipment, also called electric vehicle supply equipment (EVSE)</li>
+      <li>Because they run on electricity, the vehicles emit no exhaust from a tailpipe and do not contain the typical liquid fuel components, such as fuel pumps, fuel lines, or fuel tanks</li>
+    </ul>
+
+    <p><b>Embracing Electric Vehicles (Singapore)</b></p>
+    <ul>
+      <li>$30 million to be set aside over the next 5 years for initiatives related to electric vehicles</li>
+      <li>Minimum Additional Registration Fee (ARF) will be lowered to $0 from January 2022 to December 2023</li>
+      <li>Planning to deploy 60,000 charging points at public car parks, private premises by 2030</li>
+    </ul>
+
+    <p><b>Effective?</b></p>
+    <ul>
+      <li>As of June 2021, only about 1,500 electric vehicles were registered in Singapore
+        <ul>
+          <li>Only about 0.2% of the 640,247 cars on the road</li>
+          <li>Albeit steady increase</li>
+        </ul>
+      </li>
+
+      <li>WHY?
+        <ul>
+          <li>Cost of electric vehicles are still generally higher</li>
+          <li>Lack of charging stations around the island at present making charging cars less convenient</li>
+          <li>Shorter driving distance between charges compared to driving distance of other cars between refueling</li>
+          <li>Longer charging time compared to refueling time</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><b>Sources of Pollution</b></p>
+    <p>Total U.S. Greenhouse Gas Emmisions by Economic Sector in 2019</p>
+    <ul>
+      <li>Agriculture: 10%</li>
+      <li>Commercial & Residential: 13%</li>
+      <li>Industry: 23%</li>
+      <li>Electricity: 25%</li>
+      <li>Transportaion: 29%</li>
+    </ul>
+
+    <ul>
+      <li>Transportation is a primary source of greenhouse gases in the United States</li>
+      <li>One of the largest sources of transportation-related greenhouse gas emissions is passenger cars</li>
+      <li>The majority of greenhouse gas emissions from transportation are CO<sub>2</sub> emissions resulting from the combustion of petroleum-based products, like gasoline, in internal combustion engines</li>
+    </ul>
+
+    <p><b>Reduction of pollution of electric vehicles</b></p>
+
+    <p><b>Insert data about other possible expenditures other than ev</b></p>
+
+    <p><b>Put in graphs for comparison</b></p>
+  </div>
+  
+  <!-- References -->
+  <div class="w3-container" id="References" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>References.</b></h1>
+    
+    <ul>
+      <li>
+        Alternative Fuel Data Centre. How Do All-Electric Cars Work?. Alternative Fuels Data Center.<br><a href="https://afdc.energy.gov/vehicles/how-do-all-electric-cars-work">https://afdc.energy.gov/vehicles/how-do-all-electric-cars-work</a>
+      </li>
+      <li>
+        Toh, T.W. (2021, February). Budget 2021: New measures to narrow cost difference between electric cars and conventional cars. The Straits Times.<br><a href="https://www.straitstimes.com/singapore/budget-2021-new-measures-to-narrow-cost-difference-between-Electric-cars-and-conventional">https://www.straitstimes.com/singapore/budget-2021-new-measures-to-narrow-cost-difference-between-Electric-cars-and-conventional</a>
+      </li>
+      <li>
+        Land Transport Authority. (2021, March). Factsheet: Encouraging the Adoption of Electric Cars for a More Sustainable Land Transport Sector. Land Transport Authority.<br><a href="https://www.lta.gov.sg/content/ltagov/en/newsroom/2021/3/news-release/Encouraging_the_adoption_of_electric_cars.html">https://www.lta.gov.sg/content/ltagov/en/newsroom/2021/3/news-release/Encouraging_the_adoption_of_electric_cars</a>
+      </li>
+      <li>
+        Land Transport Authority. (2021, March). Factsheet: Accelerating Nationwide Deployment of Electric Vehicle Charging Points.<br><a href="https://www.lta.gov.sg/content/ltagov/en/newsroom/2021/3/news-release/Accelerating_nationwide_deployment_of_electric_vehicle_charging_points.html">https://www.lta.gov.sg/content/ltagov/en/newsroom/2021/3/news-release/Accelerating_nationwide_deployment_of_electric_vehicle_charging_points</a>
+      </li>
+      <li>
+        Abdullah, A.Z.A. (2021, July). Number of electric vehicle registrations rise in first half of 2021. Channel News Asia.<br><a href="https://www.channelnewsasia.com/singapore/ev-electric-vehicle-registrations-rise-in-2021-2058496">https://www.channelnewsasia.com/singapore/ev-electric-vehicle-registrations-rise-in-2021-2058496</a>
+      </li>
+      <li>
+        United States Environmental Protection Agency. Sources of Greenhouse Gas Emissions. U.S. Environmental Protection Agency.<br><a href="https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions">https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group Members & Roles -->
+  <div class="w3-container" id="Group Members & Roles" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Group Members & Roles.</b></h1>
+  </div>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Alvin</li>
+        <li class="w3-padding-16">Main-role: Group Leader</li>
+        <li class="w3-padding-16">Sub-role: Researcher</li>
+        <li class="w3-padding-16">
+          <h2>Objective:</h2>
+          <span class="w3-opacity">Mainly manages the admin aspects of our group as a group leader, as well as researching on topics related to the theme to come up with a presetation.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-half">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-red w3-xlarge w3-padding-32">Guanyu</li>
+          <li class="w3-padding-16">Main-role: Coder/Programmer</li>
+          <li class="w3-padding-16">Sub-role: Builder</li>
+          <li class="w3-padding-16">
+            <h2>Objective:</h2>
+            <span class="w3-opacity">Mainly comes up with the algorithm and route of the robot, as well as turning it into code to make it work. Also helps with the building.</span>
+          </li>
+        </ul>
+        <br>
+    </div>
+
+    
+
+    <div class="w3-half">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-red w3-xlarge w3-padding-32">Yunsong</li>
+          <li class="w3-padding-16">Main-role: Builder</li>
+          <li class="w3-padding-16">Sub-role: Coder/Programmer</li>
+          <li class="w3-padding-16">
+            <h2>Objective:</h2>
+            <span class="w3-opacity">Mainly comes up with the physical robot design, and building the robot to fit the objective. Helps with programming as well.</span>
+          </li>
+        </ul>
+    </div>
+
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Copyright Team Monke 2021</p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
 </body>
+</html>
