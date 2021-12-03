@@ -1,3 +1,4 @@
+
 1. Take 2 batteries (right 2)
 2. Wallbang left wall
 3. PID line beside car until cross section
